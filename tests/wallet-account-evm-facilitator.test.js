@@ -8,7 +8,7 @@ const TX_HASH = '0xe60970cd7685466037bac1ff337e08265ac9f48af70a12529bdca5caf5a2b
 
 function createMockAdaptee (overrides = {}) {
   return {
-    _address: ADDRESS,
+    address: ADDRESS,
     _provider: {
       getCode: jest.fn(),
       waitForTransaction: jest.fn()
@@ -39,12 +39,6 @@ describe('WalletAccountEvmFacilitator', () => {
       const addresses = facilitator.getAddresses()
 
       expect(addresses).toEqual([ADDRESS])
-    })
-
-    test('should return the address from the adaptee, not a copy', () => {
-      const addresses = facilitator.getAddresses()
-
-      expect(addresses[0]).toBe(adaptee._address)
     })
   })
 

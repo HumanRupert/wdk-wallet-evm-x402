@@ -102,7 +102,7 @@ export default class WalletAccountEvmFacilitator {
    * @returns {string[]}
    */
   getAddresses () {
-    return [this._adaptee._address]
+    return [this._adaptee.address]
   }
 
   /**
